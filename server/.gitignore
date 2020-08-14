@@ -1,0 +1,8 @@
+# local config
+.env
+
+# imported modules
+node_modules
+
+# local db
+mongo-volume
