@@ -7,11 +7,28 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "web": "cd web && webpack-dev-server",
+    "build:web": "cd web && webpack"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "react-native": "0.63.2"
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@ui-kitten/components": "^5.0.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "nachos-ui": "^0.2.0-beta.1",
+    "react": "^16.13.1",
+    "react-art": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native": "0.63.2",
+    "react-native-linear-gradient": "~2.5.6",
+    "react-native-photo-view": "github:shoutem/react-native-photo-view#0ffa1481f6b6cb8663cb291b7db1d6644440584d",
+    "react-native-svg": "^12.1.0",
+    "react-native-vector-icons": "~6.6.0",
+    "react-native-web": "^0.13.7",
+    "react-native-webview": "9.4.0",
+    "webpack": "^4.44.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -24,11 +41,15 @@
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.13.1",
     "prettier": "^2.0.4",
-    "typescript": "^3.8.3"
+    "react-test-renderer": "16.13.1",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.8.3",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "jest": {
     "preset": "react-native",
