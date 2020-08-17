@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --debug --transpile-only ./src/index.ts",
+    "start:debug": "ts-node-dev --inspect --respawn --debug --transpile-only ./src/index.ts",
     "run-server": "ts-node ./src/index.ts",
     "test": "node node_modules/.bin/jest --runInBand",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
@@ -14,9 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@graphql-tools/schema": "^6.0.18",
+    "@types/mongodb": "^3.5.26",
     "dotenv": "^8.2.0",
     "graphql-tag": "^2.11.0",
+    "graphql-tools": "^6.0.18",
     "graphql-yoga": "^1.18.3",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.6.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },

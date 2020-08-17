@@ -1,25 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import * as eva from '@eva-design/eva';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { ApplicationProvider } from '@ui-kitten/components';
+import React from 'react';
+import { Platform } from 'react-native';
+import Home from './pages/Home';
+import Other from './pages/Other';
+import { ApolloProvider } from '@apollo/client';
+import { graphqlClient } from './libs/graphql-client';
 
-import React from 'react'
-import {
-    SafeAreaView,
-} from 'react-native'
+const showHeader = Platform.OS !== 'web'
 
-import { Button } from '@ui-kitten/components';
+// Path mapping for routing.
+const linking = {
+    prefixes: [],
+    config: {
+        screens: {
+            Home: 'home',
+            Other: 'other',
+        },
+    },
+};
 
 
-const App = () => {
+const Stack = createStackNavigator()
+
+const Routes = () => {
+    return <NavigationContainer linking={linking}>
+        <Stack.Navigator screenOptions={{ headerShown: showHeader }}>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Other" component={Other} />
+        </Stack.Navigator>
+    </NavigationContainer>;
+}
+
+export default function App() {
     return (
-            <SafeAreaView>
-                <Button>Hello</Button>
-            </SafeAreaView>
+        <ApplicationProvider {...eva} theme={eva.light}>
+            <ApolloProvider client={graphqlClient}>
+                <Routes />
+            </ApolloProvider>
+        </ApplicationProvider>
     )
 }
 
-export default App
+
+
